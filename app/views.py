@@ -3,13 +3,13 @@ from django.http.request import HttpRequest
 from django.http.response import HttpResponse
 
 # Create your views here.
-def greeting(request: HttpRequest, name) -> HttpResponse:
+def greeting(request: HttpRequest, name:str) -> HttpResponse:
     names = (str(name))
     return HttpResponse(f"Hello, {names}")
-def how_old(request: HttpRequest,end,birthyear) -> HttpResponse:
+def how_old(request: HttpRequest,end:int,birthyear:int) -> HttpResponse:
     age=(end-birthyear)
     return HttpResponse(age)
-def order(request: HttpRequest, burgers, fries, drinks) -> HttpResponse:
+def order(request: HttpRequest, burgers:int, fries:int, drinks:int) -> HttpResponse:
     burger_price = 4.50
     fries_price = 1.5
     drinks_price = 1
